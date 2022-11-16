@@ -37,15 +37,17 @@ function playRound(playerChoice, choice){
 }
 
 
-function play(){
-    for(let i = 0; i < 5; i++){
+function play(n){
+    n = prompt("How many rounds do you wish to play?: ", "choose at least one please");
+    console.log("There will be " + n + " rounds, you better win this boi :)");
+    for(let i = 0; i < n; i++){
         playerChoice = prompt("Enter your choice: ", "what will it be...");
         playRound(playerChoice, getComputerChoice());
     }
     if(counterP > counterC){
-        console.log("You absolute legend, you won, but at what cost...");
+        console.log("You absolute legend, the player won, but at what cost...");
     }else if(counterP < counterC){
-        console.log("You absolute loser, you failed us all...");
+        console.log("You absolute loser, the player lost, you failed us all...");
     }else{
         console.log("Its a tie");
     }
