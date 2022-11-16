@@ -1,6 +1,5 @@
 var choices = ["Rock", "Paper", "Scissors"];
 var choice = getComputerChoice();
-var playerChoice = "paPER";
 var counterP = 0; //counter for player
 var counterC = 0; //counter for computer
 function getComputerChoice(){
@@ -11,8 +10,8 @@ function getComputerChoice(){
 function playRound(playerChoice, choice){
     lowerP = playerChoice.toString().toLowerCase();
     lowerC = choice.toString().toLowerCase();
-    console.log(lowerP);
-    console.log(lowerC);
+    console.log("The players choice is: " + lowerP);
+    console.log("The computers choice is: " +lowerC);
     if(lowerP === lowerC){
         //console.log("Its a draw");
     }else if(lowerP === "rock" && lowerC === "scissors"){
@@ -37,18 +36,16 @@ function playRound(playerChoice, choice){
     return counterP, counterC;
 }
 
-console.log(choice);
-//console.log(playRound(playerChoice, choice));
 
 function play(){
-    for(let i = 0; i<5; i++){
+    for(let i = 0; i < 5; i++){
         playerChoice = prompt("Enter your choice: ", "what will it be...");
         playRound(playerChoice, getComputerChoice());
     }
     if(counterP > counterC){
-        console.log("You win, yay");
+        console.log("You absolute legend, you won, but at what cost...");
     }else if(counterP < counterC){
-        console.log("You lost, nay");
+        console.log("You absolute loser, you failed us all...");
     }else{
         console.log("Its a tie");
     }
