@@ -6,12 +6,12 @@ function getComputerChoice(){
     return choice;
 }
 
-let n = document.getElementById("rounds").getValue();
-
-function getValue(){
-    let round = document.getElementById("rounds");
-    return round;
-}
+let btn = document.getElementById("rounded");
+let rounds = document.getElementById("rounds");
+let number = 0;
+btn.addEventListener('click', () =>{
+    number = rounds.value;
+})
 
 function playRound(playerChoice, choice){
     lowerP = playerChoice.toString().toLowerCase();
@@ -47,7 +47,7 @@ function playRound(playerChoice, choice){
         document.getElementById("computer").innerHTML = counterC
     }
 
-    if(counterP == n || counterC == n){
+    if(counterP == number || counterC == number){
         const rock = document.getElementById('rock');
         const paper = document.getElementById('paper');
         const scsissors = document.getElementById('scissors');
