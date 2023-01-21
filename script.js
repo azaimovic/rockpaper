@@ -1,52 +1,48 @@
-var choices = ["Rock", "Paper", "Scissors"];
 var counterP = 0; //counter for player
 var counterC = 0; //counter for computer
+
+// creating a list of all the available choices
+var choices = ["Rock", "Paper", "Scissors"];
+// function which gives a random choice from the list "choices" each time its called
 function getComputerChoice(){
     var choice = choices[Math.floor(Math.random()*choices.length)];
     return choice;
 }
 
-let btn = document.getElementById("rounded");
-let rounds = document.getElementById("rounds");
+let btn = document.getElementById("rounded"); // button which is used for sending how many rounds is played
+let rounds = document.getElementById("rounds"); // input for how many rounds are there to be played
 let number = 0;
 btn.addEventListener('click', () =>{
     number = rounds.value;
 })
 
-function playRound(playerChoice, choice){
-    lowerP = playerChoice.toString().toLowerCase();
-    lowerC = choice.toString().toLowerCase();
-    console.log("The players choice is: " + lowerP);
-    console.log("The computers choice is: " +lowerC);
 
-    if(lowerP === lowerC){
-        //console.log("Its a draw");
-    }else if(lowerP === "rock" && lowerC === "scissors"){
-        //console.log("You win! Rock beats scissors");
+//main function which uses 2 arguments to decide whos the winner between them
+function playRound(playerChoice, choice){
+    lowerP = playerChoice.toString().toLowerCase(); //ensures the input is always in the same format
+    lowerC = choice.toString().toLowerCase(); //ensures the input is always in the same format
+
+    if(lowerP === "rock" && lowerC === "scissors"){
         counterP++;
         document.getElementById("player").innerHTML = counterP
     }else if(lowerP === "rock" && lowerC === "paper"){
-        //console.log("You lose, paper beats rock");
         counterC++;
         document.getElementById("computer").innerHTML = counterC
     }else if(lowerP === "paper" && lowerC === "rock"){
-        //console.log("You win! Paper beats rock");
         counterP++
         document.getElementById("player").innerHTML = counterP
     }else if(lowerP === "paper" && lowerC === "scissors") {
-        //console.log("You lose! Scissors beats paper");
         counterC++;
         document.getElementById("computer").innerHTML = counterC
     }else if(lowerP === "scissors" && lowerC === "paper"){
-        //console.log("You win! Scissors beats paper");
         counterP++;
         document.getElementById("player").innerHTML = counterP
     }else if(lowerP === "scissors" && lowerC === "rock"){
-        //console.log("You lose, rock beats scissors");
         counterC++;
         document.getElementById("computer").innerHTML = counterC
     }
 
+    // if either counter is equal to the number of rounds, the game is finished, all the buttons are disabled
     if(counterP == number || counterC == number){
         const rock = document.getElementById('rock');
         const paper = document.getElementById('paper');
@@ -61,6 +57,7 @@ function playRound(playerChoice, choice){
 }
 
 
+/*
 function play(n){
     n = prompt("How many rounds do you wish to play?: ", "choose at least one please");
     console.log("There will be " + n + " rounds, you better win this boi :)");
@@ -75,10 +72,11 @@ function play(n){
     }else{
         console.log("Its a tie");
     }
-}
+} */ // unrelated function which was used for the console version
 
 
 
+// added event listeners for each button so when its clicked function "playRound" is called
 document.getElementById("rock").addEventListener("click", () => {playRound(document.getElementById("rock").value, getComputerChoice())});
 document.getElementById("paper").addEventListener("click", () => {playRound(document.getElementById("paper").value, getComputerChoice())});
 document.getElementById("scissors").addEventListener("click", () => {playRound(document.getElementById("scissors").value, getComputerChoice())});
