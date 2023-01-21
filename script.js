@@ -11,7 +11,7 @@ function getComputerChoice(){
 
 let btn = document.getElementById("rounded"); // button which is used for sending how many rounds is played
 let rounds = document.getElementById("rounds"); // input for how many rounds are there to be played
-let number = 0;
+let number = -1;
 btn.addEventListener('click', () =>{
     number = rounds.value;
 })
@@ -46,16 +46,22 @@ function playRound(playerChoice, choice){
     if(counterP == number || counterC == number){
         const rock = document.getElementById('rock');
         const paper = document.getElementById('paper');
-        const scsissors = document.getElementById('scissors');
+        const scissors = document.getElementById('scissors');
         rock.disabled = true;
         paper.disabled = true;
-        scsissors.disabled = true;
+        scissors.disabled = true;
     }
 
-    return counterP, counterC;
+    // div which announces the winner
+    let divWinner = document.getElementById('winner'); // grabs the div with class "winner"
+    if (counterC == number){
+        divWinner.innerHTML = '<p>The winner is the computer</p>'
+    }else if(counterP == number){
+        divWinner.innerHTML = '<p>The winner is the player</p>';
+    }
+    return {counterP, counterC};
 
 }
-
 
 /*
 function play(n){
@@ -80,4 +86,3 @@ function play(n){
 document.getElementById("rock").addEventListener("click", () => {playRound(document.getElementById("rock").value, getComputerChoice())});
 document.getElementById("paper").addEventListener("click", () => {playRound(document.getElementById("paper").value, getComputerChoice())});
 document.getElementById("scissors").addEventListener("click", () => {playRound(document.getElementById("scissors").value, getComputerChoice())});
-
