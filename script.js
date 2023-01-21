@@ -1,11 +1,11 @@
-var counterP = 0; //counter for player
-var counterC = 0; //counter for computer
+let counterP = 0; //counter for player
+let counterC = 0; //counter for computer
 
 // creating a list of all the available choices
-var choices = ["Rock", "Paper", "Scissors"];
+let choices = ["Rock", "Paper", "Scissors"];
 // function which gives a random choice from the list "choices" each time its called
 function getComputerChoice(){
-    var choice = choices[Math.floor(Math.random()*choices.length)];
+    let choice = choices[Math.floor(Math.random()*choices.length)];
     return choice;
 }
 
