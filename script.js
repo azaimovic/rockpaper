@@ -1,9 +1,9 @@
 let counterP = 0; //counter for player
 let counterC = 0; //counter for computer
 
-// creating a list of all the available choices
+// creating an array of all the available choices
 let choices = ["Rock", "Paper", "Scissors"];
-// function which gives a random choice from the list "choices" each time its called
+// function which gives a random choice from the array "choices" each time its called
 function getComputerChoice(){
     let choice = choices[Math.floor(Math.random()*choices.length)];
     return choice;
