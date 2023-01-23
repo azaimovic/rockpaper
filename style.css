@@ -116,3 +116,12 @@ h2{
 #player,#computer{
     font-size:26px;
 }
+
+img{
+    max-width:100%;
+}
+@media only screen and (max-width: 600px) {
+    #allOptions{
+        gap:20px;
+    }
+}
