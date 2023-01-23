@@ -2,16 +2,16 @@ let counterP = 0; //counter for player
 let counterC = 0; //counter for computer
 
 // creating an array of all the available choices
-let choices = ["Rock", "Paper", "Scissors"];
+const choices = ["Rock", "Paper", "Scissors"];
 // function which gives a random choice from the array "choices" each time its called
 function getComputerChoice(){
     let choice = choices[Math.floor(Math.random()*choices.length)];
     return choice;
 }
 
-let btn = document.getElementById("rounded"); // button which is used for sending how many rounds is played
+let btn = document.getElementById("rounded"); // button which is used for confirming number of rounds
 let rounds = document.getElementById("rounds"); // input for how many rounds are there to be played
-let number = -1;
+let number;
 btn.addEventListener('click', () =>{
     number = rounds.value;
 })
@@ -42,6 +42,12 @@ function playRound(playerChoice, choice){
         document.getElementById("computer").innerHTML = counterC
     }
 
+    //function which will show off the choices of both players dynamically
+    let playerChoiceDisplay = document.getElementById('playerChoice');
+    let computerChoiceDisplay = document.getElementById('computerChoice');
+    playerChoiceDisplay.innerHTML = 'Players choice is ' + playerChoice;
+    computerChoiceDisplay.innerHTML = 'Computers choice is ' + choice;
+
     // if either counter is equal to the number of rounds, the game is finished, all the buttons are disabled
     if(counterP == number || counterC == number){
         const rock = document.getElementById('rock');
@@ -63,6 +69,13 @@ function playRound(playerChoice, choice){
 
 }
 
+
+// added event listeners for each button so when its clicked function "playRound" is called
+document.getElementById("rock").addEventListener("click", () => {playRound(document.getElementById("rock").value, getComputerChoice())});
+document.getElementById("paper").addEventListener("click", () => {playRound(document.getElementById("paper").value, getComputerChoice())});
+document.getElementById("scissors").addEventListener("click", () => {playRound(document.getElementById("scissors").value, getComputerChoice())});
+
+
 /*
 function play(n){
     n = prompt("How many rounds do you wish to play?: ", "choose at least one please");
@@ -82,7 +95,4 @@ function play(n){
 
 
 
-// added event listeners for each button so when its clicked function "playRound" is called
-document.getElementById("rock").addEventListener("click", () => {playRound(document.getElementById("rock").value, getComputerChoice())});
-document.getElementById("paper").addEventListener("click", () => {playRound(document.getElementById("paper").value, getComputerChoice())});
-document.getElementById("scissors").addEventListener("click", () => {playRound(document.getElementById("scissors").value, getComputerChoice())});
+
