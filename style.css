@@ -8,5 +8,11 @@
 #allOptions{
     display:flex;
     justify-content:center;
-    gap:100px;
+    gap:50px;
+}
+
+.option{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
