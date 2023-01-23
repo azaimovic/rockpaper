@@ -42,7 +42,7 @@ function playRound(playerChoice, choice){
         document.getElementById("computer").innerHTML = counterC
     }
 
-    //function which will show off the choices of both players dynamically
+    //show off the choices of both players dynamically
     let playerChoiceDisplay = document.getElementById('playerChoice');
     let computerChoiceDisplay = document.getElementById('computerChoice');
     playerChoiceDisplay.innerHTML = 'Players choice is ' + playerChoice;

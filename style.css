@@ -4,3 +4,9 @@
     margin:0;
     box-sizing: border-box;
 }
+
+#allOptions{
+    display:flex;
+    justify-content:center;
+    gap:100px;
+}
