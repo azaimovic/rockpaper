@@ -68,8 +68,8 @@ function playRound(playerChoice, choice){
     //show off the choices of both players dynamically
     let playerChoiceDisplay = document.getElementById('playerChoice');
     let computerChoiceDisplay = document.getElementById('computerChoice');
-    playerChoiceDisplay.innerHTML = 'Players choice is ' + (playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1));
-    computerChoiceDisplay.innerHTML = 'Computers choice is ' + choice;
+    playerChoiceDisplay.innerHTML = 'Players choice is <h1>' + (playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1)) + '</h1>';
+    computerChoiceDisplay.innerHTML = 'Computers choice is <h1>' + choice + '</h1>';
 
     // if either counter is equal to the number of rounds, the game is finished, all the buttons are disabled
     if(counterP == number || counterC == number){
@@ -84,9 +84,9 @@ function playRound(playerChoice, choice){
     // div which announces the winner
     let divWinner = document.getElementById('winner'); // grabs the div with class "winner"
     if (counterC == number){
-        divWinner.innerHTML = '<p>The winner is the computer</p>'
+        divWinner.innerHTML = '<p>WINNER: </p>' + '<h2> COMPUTER</h2>';
     }else if(counterP == number){
-        divWinner.innerHTML = '<p>The winner is the player</p>';
+        divWinner.innerHTML = '<p>WINNER: </p>' + '<h2> PLAYER</h2>';
     }
     return {counterP, counterC};
 

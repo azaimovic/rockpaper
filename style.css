@@ -3,6 +3,7 @@
     padding: 0px;
     margin:0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 body{
@@ -49,10 +50,12 @@ button:hover {
 .fadeIn{
     opacity: 1;
     pointer-events: all;
+    transition:opacity 0.5s ease 0.5s;
 }
 
 .fadeOut{
     opacity: 0;
+    transition:opacity 0.5s ease;
     pointer-events: none;
 }
 
@@ -87,4 +90,29 @@ input:focus {
     background-color: #212121;
     color: #e8e8e8;
     box-shadow: 5px 5px #888888;
+}
+
+.bottomFade{
+    display:flex;
+    align-items:center;
+    justify-content: space-evenly;
+    color: #fff;
+    margin-bottom:10vh;
+}
+
+h1{
+    text-align:center;
+}
+
+h2{
+    font-size:36px;
+}
+
+#winner{
+    justify-content:center;
+    flex-direction: column;
+}
+
+#player,#computer{
+    font-size:26px;
 }
