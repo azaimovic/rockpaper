@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="allOptions">
+    <!-- upper div with the choices of the game -->
+    <div id="allOptions" class="fadeOut">
         <div class="option">
             <img src="images/rockSmall.png">
             <button class="css-button-sharp" id="rock" value="rock">Choose me for Rock</button>
@@ -22,13 +23,24 @@
             <button id="scissors" value="scissors">Choose me for Scissors</button>
         </div>
     </div>
-    <br><input type="text" id="rounds" placeholder="How many rounds?"><button id="rounded">GO</button>
-    <div id="display">
+
+    <!-- div which only appears at the start of the game/ input of rounds -->
+    <div id="startDiv">
+            <div class="insideStart">
+            <input type="text" id="rounds" placeholder="How many rounds?">
+            <button id="rounded">GO</button>
+        </div>
+    </div>
+
+    <!-- div used for displaying each of the players choices -->
+    <div id="display" class="fadeOut">
         <span id="playerChoice">Players choice is </span>
         <span id="computerChoice">Computers choice is </span>
     </div>
-    <div id="score">Keeping track of the score <span id="player">0</span> VS <span id="computer">0</span></div>
-    <div id="winner">
+
+    <!-- divs for keeping track of the score, and the div announcing the winner -->
+    <div id="score" class="fadeOut">Keeping track of the score <span id="player">0</span> VS <span id="computer">0</span></div>
+    <div id="winner" class="fadeOut">
         
     </div>
 </body>

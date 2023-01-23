@@ -9,12 +9,35 @@ function getComputerChoice(){
     return choice;
 }
 
+
+
 let btn = document.getElementById("rounded"); // button which is used for confirming number of rounds
 let rounds = document.getElementById("rounds"); // input for how many rounds are there to be played
 let number;
 btn.addEventListener('click', () =>{
     number = rounds.value;
+    //fades out the startDiv with a button click
+    const startDiv = document.getElementById("startDiv");
+    startDiv.classList.add("fadeOut");
+    fadeIn();
 })
+
+// function which fades the whole game in basically 
+const fadeIn = () => {
+    const allOptions = document.getElementById('allOptions');
+    const display = document.getElementById('display');
+    const score = document.getElementById('score');
+    const winner = document.getElementById('winner');
+    allOptions.classList.remove('fadeOut');
+    allOptions.classList.add('fadeIn');
+    display.classList.remove('fadeOut');
+    display.classList.add('fadeIn');
+    score.classList.remove('fadeOut');
+    score.classList.add('fadeIn');
+    winner.classList.remove('fadeOut');
+    winner.classList.add('fadeIn');
+}
+
 
 
 //main function which uses 2 arguments to decide whos the winner between them

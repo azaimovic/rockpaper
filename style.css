@@ -5,10 +5,17 @@
     box-sizing: border-box;
 }
 
+body{
+    background: rgb(0,38,6);
+    background: linear-gradient(90deg, rgba(0,38,6,1) 0%, rgba(4,124,70,1) 35%, rgba(117,168,129,1) 100%);
+}
+
+/* layout for the upper options part */
 #allOptions{
     display:flex;
     justify-content:center;
-    gap:50px;
+    gap:200px;
+    margin-top:10vh;
 }
 
 .option{
@@ -19,7 +26,7 @@
 
 
 /* styling for the option buttons */
-.option button{
+button{
     min-width: 130px;
     height: 40px;
     color: #fff;
@@ -33,12 +40,51 @@
     border: 2px solid #5b446a;
     background: #5b446a;
   }
-.option button:hover {
+button:hover {
     background: #fff;
     color: #5b446a;
 }
 
-body{
-    background: rgb(0,38,6);
-    background: linear-gradient(90deg, rgba(0,38,6,1) 0%, rgba(4,124,70,1) 35%, rgba(117,168,129,1) 100%);
+/* classes used for fading in and out*/
+.fadeIn{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.fadeOut{
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* style for the startDiv*/
+#startDiv{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.insideStart{
+    display:flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+/* input styling */ 
+input {
+    border: 2px solid #e8e8e8;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #212121;
+    font-size: small;
+    font-weight: bold;
+    text-align: center;
+    color: #e8e8e8;
+   }
+   
+input:focus {
+    outline-color: white;
+    background-color: #212121;
+    color: #e8e8e8;
+    box-shadow: 5px 5px #888888;
 }
