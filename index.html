@@ -5,11 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="rock" value="rock">Choose me for Rock</button>
-    <button id="paper" value="paper">Choose me for Paper</button>
-    <button id="scissors" value="scissors">Choose me for Scissors</button>
+    <div id="allOptions">
+        <div class="option">
+            <button id="rock" value="rock">Choose me for Rock</button>
+        </div>
+        <div class="option">
+            <button id="paper" value="paper">Choose me for Paper</button>
+        </div>
+        <div class="option">
+            <button id="scissors" value="scissors">Choose me for Scissors</button>
+        </div>
+    </div>
     <br><input type="text" id="rounds" placeholder="How many rounds?"><button id="rounded">GO</button>
     <div id="display">
         <span id="playerChoice">Players choice is </span>
