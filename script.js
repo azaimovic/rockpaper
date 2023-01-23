@@ -68,7 +68,7 @@ function playRound(playerChoice, choice){
     //show off the choices of both players dynamically
     let playerChoiceDisplay = document.getElementById('playerChoice');
     let computerChoiceDisplay = document.getElementById('computerChoice');
-    playerChoiceDisplay.innerHTML = 'Players choice is ' + playerChoice;
+    playerChoiceDisplay.innerHTML = 'Players choice is ' + (playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1));
     computerChoiceDisplay.innerHTML = 'Computers choice is ' + choice;
 
     // if either counter is equal to the number of rounds, the game is finished, all the buttons are disabled
