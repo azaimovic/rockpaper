@@ -1,0 +1,6 @@
+/* removing default styling */
+*{
+    padding: 0px;
+    margin:0;
+    box-sizing: border-box;
+}
